@@ -1,0 +1,31 @@
+@import "../../assets/styles/variables.module.scss";
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &_wrapper {
+        display: flex;
+        align-items: center;
+        height: 92px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.2em;
+            color: $darkGrey;
+        }
+
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: auto;
+        }
+    }
+}
