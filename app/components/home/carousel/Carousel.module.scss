@@ -1,0 +1,108 @@
+@import "../../../assets/styles/variables.module.scss";
+
+.carousel {
+    &_wrapper {
+        position: relative;
+        .img {
+            height: calc(100vh - 92px);
+            width: 100%;
+            max-height: calc(100vh - 92px);
+        }
+    }
+    .control {
+        position: relative;
+        &_wrapper {
+            position: absolute;
+            bottom: 120px;
+            width: 100%;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        :global {
+            .custom_pagination {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                width: 100%;
+                .swiper-pagination-bullet {
+                    max-width: 178px;
+                    width: 100%;
+
+                    .index {
+                        font-weight: 700;
+                        font-size: 28px;
+                        line-height: 1.2em;
+                        color: #ffffff4d;
+                        margin-bottom: 15px;
+                    }
+                    .dot {
+                        width: 100%;
+                        height: 2px;
+                        background: #ffffff4d;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            height: 100%;
+                            width: 0px;
+                            background: $white;
+                        }
+                    }
+
+                    &.swiper-pagination-bullet-active {
+                        .index {
+                            color: $white;
+                        }
+                        .dot {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 23px;
+
+        &_prev,
+        &_next {
+            height: 52px;
+            width: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: $animation;
+            will-change: transition;
+
+            &:hover {
+                background: $orenge;
+                border: 1px solid $orenge;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mediaLaptop) {
+    .carousel {
+        &_wrapper {
+            .img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
