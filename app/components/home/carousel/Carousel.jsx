@@ -43,24 +43,24 @@ const Carousel = () => {
             onSwiper={(swiper) => console.log(swiper)}
         >
             <SwiperSlide className={styles.carousel_wrapper}>
-                <Image src={MainBannerOne1920} className={`${styles.img} lg`} />
-                <Image src={MainBannerOne768} className={`${styles.img} md`} />
-                <Image src={MainBannerOne375} className={`${styles.img} xs`} />
+                <Image src={MainBannerOne1920} className={`${styles.img} lg`} alt='banner' />
+                <Image src={MainBannerOne768} className={`${styles.img} md`} alt='banner' />
+                <Image src={MainBannerOne375} className={`${styles.img} xs`} alt='banner' />
             </SwiperSlide>
             <SwiperSlide className={styles.carousel_wrapper}>
-                <Image src={MainBannerOne1920} className={`${styles.img} lg`} />
-                <Image src={MainBannerOne768} className={`${styles.img} md`} />
-                <Image src={MainBannerOne375} className={`${styles.img} xs`} />
+                <Image src={MainBannerOne1920} className={`${styles.img} lg`} alt='banner' />
+                <Image src={MainBannerOne768} className={`${styles.img} md`} alt='banner' />
+                <Image src={MainBannerOne375} className={`${styles.img} xs`} alt='banner' />
             </SwiperSlide>
             <SwiperSlide className={styles.carousel_wrapper}>
-                <Image src={MainBannerOne1920} className={`${styles.img} lg`} />
-                <Image src={MainBannerOne768} className={`${styles.img} md`} />
-                <Image src={MainBannerOne375} className={`${styles.img} xs`} />
+                <Image src={MainBannerOne1920} className={`${styles.img} lg`} alt='banner' />
+                <Image src={MainBannerOne768} className={`${styles.img} md`} alt='banner' />
+                <Image src={MainBannerOne375} className={`${styles.img} xs`} alt='banner' />
             </SwiperSlide>
             <SwiperSlide className={styles.carousel_wrapper}>
-                <Image src={MainBannerOne1920} className={`${styles.img} lg`} />
-                <Image src={MainBannerOne768} className={`${styles.img} md`} />
-                <Image src={MainBannerOne375} className={`${styles.img} xs`} />
+                <Image src={MainBannerOne1920} className={`${styles.img} lg`} alt='banner' />
+                <Image src={MainBannerOne768} className={`${styles.img} md`} alt='banner' />
+                <Image src={MainBannerOne375} className={`${styles.img} xs`} alt='banner' />
             </SwiperSlide>
 
             <div className={`${styles.control} container`}>

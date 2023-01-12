@@ -1,0 +1,66 @@
+@import "../../../../assets/styles/variables.module.scss";
+
+.item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .img {
+        width: 100%;
+        transition: $animation;
+        will-change: contents;
+    }
+    .name {
+        position: absolute;
+        z-index: 1;
+        left: 39px;
+        bottom: 30px;
+        color: $white;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.3em;
+    }
+
+    &::after {
+        content: "";
+        height: 0px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.6) 38.21%, rgba(0, 0, 0, 0) 76.79%);
+        transition: $animation;
+        will-change: contents;
+    }
+    &:hover img{
+        transform: scale(1.1);
+    }
+    &:hover::after {
+        height: 100%;
+    }
+}
+@media (max-width: $mediaTablet) {
+    .item {
+        .img {
+            height: 330px;
+        }
+        .name {
+            left: 25px;
+            bottom: 25px;
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-width: $mediaMobile) {
+    .item {
+        .img {
+            height: 345px;
+        }
+        .name {
+            left: 30px;
+            bottom: 30px;
+            font-size: 25px;
+        }
+    }
+}

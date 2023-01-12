@@ -13,7 +13,7 @@ const Advantage = () => {
                     Что вы получите, заказав металлообработку именно у нас
                 </p>
                 <div className={styles.advantage_wrapper}>
-                    {advantage.map(item => { return <AdvantageItem key={item.name} item={item} /> })}
+                    {advantage.map(item => { return <AdvantageItem key={item.title} item={item} /> })}
                 </div>
             </div>
         </div>

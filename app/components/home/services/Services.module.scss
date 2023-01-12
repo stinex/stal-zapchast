@@ -1,0 +1,48 @@
+@import "../../../assets/styles/variables.module.scss";
+.services {
+    background: url(../../../assets/images/home/services-bg-1920.png) center no-repeat;
+    background-size: cover;
+    padding: 146px 0 190px;
+
+    .title {
+        font-weight: 500;
+        font-size: 46px;
+        line-height: 1.3em;
+        text-align: center;
+        color: $darkGrey;
+        margin-bottom: 64px;
+    }
+    &_wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 24px 30px;
+    }
+}
+
+@media (max-width: $mediaTablet) {
+    .services {
+        padding: 50px 0;
+
+        .title {
+            font-size: 46px;
+            margin-bottom: 60px;
+        }
+        &_wrapper {
+            gap: 30px;
+        }
+    }
+}
+
+@media (max-width: $mediaMobile) {
+    .services {
+        padding: 40px 0;
+
+        .title {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+        &_wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,6 +1,10 @@
-import Advantage from '../../components/home/advantage/Advantage'
-import Carousel from '../../components/home/carousel/Carousel'
+
 import styles from './Home.module.scss'
+
+import Carousel from '../../components/home/carousel/Carousel'
+import Advantage from '../../components/home/advantage/Advantage'
+import Services from '../../components/home/services/Services'
+import AboutCompany from '../../components/home/about-company/AboutCompany'
 
 
 const Home = () => {
@@ -26,6 +30,8 @@ const Home = () => {
         <Carousel />
       </div>
       <Advantage />
+      <Services />
+      <AboutCompany />
     </div>
   )
 }
