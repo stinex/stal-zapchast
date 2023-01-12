@@ -104,5 +104,44 @@
                 width: 100%;
             }
         }
+        .control {
+            &_wrapper {
+                bottom: 48px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mediaTablet) {
+    .carousel {
+        .control {
+            :global {
+                .custom_pagination {
+                    justify-content: flex-end;
+                    gap: 5px;
+                    .swiper-pagination-bullet {
+                        max-width: 100px;
+
+                        .index {
+                            font-size: 20px;
+                            margin-bottom: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        .navigation {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $mediaMobile) {
+    .carousel {
+        .control {
+            &_wrapper {
+                bottom: 58px;
+            }
+        }
     }
 }

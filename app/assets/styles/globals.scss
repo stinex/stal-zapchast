@@ -64,3 +64,15 @@ li {
 li {
   list-style: none;
 }
+
+@media (max-width: $mediaTablet) {
+  .container {
+    width: min(100% - 78px, 1230px);
+  }
+}
+
+@media (max-width: $mediaMobile) {
+  .container {
+    width: min(100% - 30px, 1230px);
+  }
+}

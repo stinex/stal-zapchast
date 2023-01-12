@@ -1,0 +1,82 @@
+@import "../../../assets/styles/variables.module.scss";
+.advantage {
+    padding: 150px 0;
+    .title {
+        font-weight: 500;
+        font-size: 46px;
+        line-height: 1.3em;
+        text-align: center;
+        color: $darkGrey;
+        margin-bottom: 24px;
+    }
+    .description {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5em;
+        text-align: center;
+        color: $greyText;
+        margin-bottom: 60px;
+    }
+    .advantage_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &::after,
+        &::before {
+            display: block;
+            content: "";
+            width: 2px;
+            height: 188px;
+            background: linear-gradient(
+                360deg,
+                rgba(218, 219, 221, 0) 0%,
+                rgba(218, 219, 221, 0.5) 12.33%,
+                #dadbdd 51.91%,
+                rgba(218, 219, 221, 0.5) 87.85%,
+                rgba(218, 219, 221, 0) 100%
+            );
+        }
+        &::before {
+            order: 2;
+        }
+        &::after {
+            order: 4;
+        }
+    }
+}
+@media (max-width: $mediaTablet) {
+    .advantage {
+        padding: 80px 0 100px;
+        .title {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        .description {
+            font-size: 18px;
+        }
+        .advantage_wrapper {
+            flex-direction: column;
+            gap: 20px;
+
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: $mediaMobile) {
+    .advantage {
+        padding: 60px 0;
+
+        .description {
+            max-width: 290px;
+            margin: 0 auto 40px;
+        }
+        .advantage_wrapper {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
