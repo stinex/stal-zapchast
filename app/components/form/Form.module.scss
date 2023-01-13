@@ -1,0 +1,142 @@
+@import "../../assets/styles/variables.module.scss";
+
+.form {
+    .title {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 1.2em;
+        color: #1e212c;
+    }
+
+    .error {
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        font-size: 12px;
+        color: $red;
+    }
+
+    .label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5em;
+        color: $grey;
+        position: relative;
+
+        .input {
+            background: #f4f5f7;
+            border: 1px solid #d7dadd;
+            border-radius: 4px;
+            height: 44px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.5em;
+            color: #9a9ca5;
+            padding-left: 16px;
+            margin-top: 8px;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 1.5em;
+                color: #9a9ca5;
+            }
+        }
+        .file {
+            background: #1d110e;
+            height: 44px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: $white;
+            display: grid;
+            place-items: center;
+            margin-top: 8px;
+            cursor: pointer;
+
+            input[type="file"] {
+                display: none;
+            }
+        }
+    }
+    .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5em;
+        color: $grey;
+        cursor: pointer;
+        position: relative;
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"] ~ label {
+            width: 16px;
+            height: 16px;
+            position: relative;
+            display: grid;
+            place-items: center;
+            background: #f4f5f7;
+            border: 1px solid #d7dadd;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]:checked ~ label {
+            background: $orenge;
+            border: 1px solid $orenge;
+        }
+    }
+    .submit {
+        background: $orenge;
+        border-radius: 4px;
+        height: 44px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 44px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: $white;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+/* FormBlock */
+.form__wrapper {
+    max-width: 495px;
+    padding: 37px 40px 47px;
+    background: $white;
+    border: 1px solid #e5e8ed;
+    box-shadow: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px rgba(30, 33, 44, 0.1),
+        0px 12px 10px -6px rgba(30, 33, 44, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+    border-radius: 4px;
+    margin-left: auto;
+
+    .title {
+        line-height: 1.5em;
+        margin-bottom: 23px;
+    }
+
+    .label {
+        margin-bottom: 20px;
+    }
+    .checkbox {
+        margin-bottom: 67px;
+    }
+    .submit {
+        max-width: 154px;
+        margin: 0 auto;
+    }
+}
