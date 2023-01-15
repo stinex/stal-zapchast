@@ -1,13 +1,13 @@
 
 import MenuItem from './menu-item/MenuItem'
 import styles from './Menu.module.scss'
-import { menu } from './menu-data.js'
+import { menu } from '../../../assets/data/menu-data.js'
 
-const Menu = () => {
+const Menu = ({ location }) => {
     return (
         <nav className={styles.menu}>
             <ul>
-                {menu?.map(item => (<MenuItem key={item.link} item={item} />))}
+                {menu?.map(item => (location === 'header' && item.link === '/' ? '' : <MenuItem key={item.link} item={item} />))}
             </ul>
         </nav>
     )

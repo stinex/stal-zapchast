@@ -1,0 +1,21 @@
+@import "../../assets/styles/variables.module.scss";
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: $greyText;
+    margin-bottom: 40px;
+
+    .active {
+        color: $grey;
+    }
+}
+@media (max-width: $mediaTablet) {
+    .breadcrumbs {
+        display: none;
+    }
+}

@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
 import 'swiper/css';
 import styles from './Carousel.module.scss'
@@ -38,9 +38,14 @@ const Carousel = () => {
             slidesPerView={1}
             pagination={pogination}
             onInit={swiperInit}
-            modules={[Navigation, Pagination]}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
+            modules={[Autoplay, Navigation, Pagination]}
+            // onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
+            autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+            }}
+            loop={true}
         >
             <SwiperSlide className={styles.carousel_wrapper}>
                 <Image src={MainBannerOne1920} className={`${styles.img} lg`} alt='banner' />

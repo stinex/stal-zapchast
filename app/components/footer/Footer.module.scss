@@ -1,0 +1,105 @@
+@import "../../assets/styles/variables.module.scss";
+
+.footer {
+    background: $darkGrey;
+    padding: 50px 0 90px;
+    &_wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 788px;
+
+        .logo {
+            grid-column: 1/-1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.5em;
+            color: $white;
+            margin-bottom: 40px;
+        }
+        .menu {
+            .link {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.6em;
+                color: $white;
+                margin-bottom: 4px;
+                opacity: 0.6;
+
+                &.main {
+                    font-weight: 700;
+                    opacity: 1;
+                    text-transform: uppercase;
+                    margin-bottom: 13px;
+                }
+            }
+        }
+        .contacts {
+            .text {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.6em;
+                color: $white;
+                margin-bottom: 4px;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                a {
+                    opacity: 0.6;
+                }
+
+                &.main {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin-bottom: 13px;
+
+                    a {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .reserved {
+            grid-column: 1/-1;
+            margin-top: 45px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1.5em;
+            color: $white;
+        }
+    }
+}
+@media (max-width: $mediaTablet) {
+    .footer {
+        padding: 50px 0 43px;
+        &_wrapper {
+            max-width: 500px;
+            grid-template-columns: 242px 100%;
+
+            .reserved {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mediaMobile) {
+    .footer {
+        padding: 55px 0 61px;
+        &_wrapper {
+            grid-template-columns: 1fr;
+            .logo {
+                margin-bottom: 69px;
+            }
+            .menu {
+                margin-bottom: 47px;
+            }
+            .reserved {
+               margin-top: 89px;
+            }
+        }
+    }
+}

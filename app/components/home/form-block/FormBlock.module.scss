@@ -5,3 +5,19 @@
     background-size: cover;
     padding: 100px 0 111px;
 }
+
+@media (max-width: $mediaTablet) {
+    .from_block {
+        background: url(../../../assets/images/home/form-768.png) center no-repeat;
+        background-size: cover;
+        padding: 68px 0;
+    }
+}
+
+@media (max-width: $mediaMobile) {
+    .from_block {
+        background: none;
+        padding: 0;
+        margin-bottom: 60px;
+    }
+}

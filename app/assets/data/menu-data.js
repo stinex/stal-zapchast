@@ -1,5 +1,9 @@
 export const menu = [
     {
+        link: '/',
+        name: 'Главная',
+    },
+    {
         link: 'about-company',
         name: 'О компании',
     },

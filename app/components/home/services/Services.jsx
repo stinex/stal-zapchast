@@ -4,8 +4,8 @@ import ServicesItem from './services-item/ServicesItem'
 
 const Services = () => {
     return (
-        <div className={styles.services}>
-            <div className="container">
+        <div className={styles.services} >
+            <div className="container" id='services'>
                 <h4 className={styles.title}>
                     Наши услуги
                 </h4>

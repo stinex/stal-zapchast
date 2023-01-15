@@ -5,7 +5,7 @@ import styles from './AboutCompany.module.scss'
 import Img from '../../../assets/images/home/about-company-1920.png'
 const AboutCompany = () => {
     return (
-        <div className={styles.about_company}>
+        <div className={styles.about_company} id='about-company'>
             <div className="container">
                 <h5 className={styles.title}>
                     О компании
