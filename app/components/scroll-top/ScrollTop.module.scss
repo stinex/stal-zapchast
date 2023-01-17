@@ -1,0 +1,41 @@
+@import "../../assets/styles/variables.module.scss";
+.scroll_top {
+    width: 100%;
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    transition: $animation;
+    will-change: auto;
+    // align-items: flex-end;
+    // gap: 16px;
+    // font-weight: 400;
+    // font-size: 14px;
+    // line-height: 1.5em;
+    // color: $white;
+
+    &.visible {
+        z-index: 10;
+        opacity: 1;
+    }
+
+    a {
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        background: #ff5a30;
+        display: grid;
+        place-items: center;
+        pointer-events: all;
+
+        &:hover {
+            cursor: pointer;
+            background: $orengeHover;
+        }
+    }
+}

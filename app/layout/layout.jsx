@@ -1,5 +1,6 @@
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import ScrollTop from "../components/scroll-top/ScrollTop";
 
 export default function Layout({ children }) {
     return (
@@ -9,6 +10,7 @@ export default function Layout({ children }) {
                 {children}
             </main>
             <Footer />
+            <ScrollTop />
         </>
     )
 }

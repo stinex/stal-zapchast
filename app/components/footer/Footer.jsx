@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Link as ScrollLink } from 'react-scroll'
 import Logo from '../../assets/images/svg/Logo'
 import styles from './Footer.module.scss'
@@ -7,6 +8,7 @@ import { contacts } from '../../assets/data/contacts'
 import { menu } from '../../assets/data/menu-data'
 
 const Footer = () => {
+    const router = useRouter()
     return (
         <div className={styles.footer}>
             <div className="container">
@@ -26,12 +28,20 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                     )
-                                } else {
+                                } else if (router.route === '/') {
                                     return (
                                         <li key={item.link}>
                                             <ScrollLink to={item.link} smooth={true} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link}>
                                                 {item.name}
                                             </ScrollLink>
+                                        </li>
+                                    )
+                                } else {
+                                    return (
+                                        <li key={item.link}>
+                                            <Link href={`/#${item.link}`} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link}>
+                                                {item.name}
+                                            </Link>
                                         </li>
                                     )
                                 }
