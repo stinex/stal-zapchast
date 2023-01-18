@@ -1,0 +1,88 @@
+@import "../../assets/styles/variables.module.scss";
+
+.services {
+    &_wrapper {
+        .banner {
+            margin-bottom: 71px;
+            height: 600px;
+
+            :global {
+                .container {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+            .information {
+                .title {
+                    margin-top: 40px;
+                    max-width: 750px;
+                    font-weight: 700;
+                    font-size: 65px;
+                    line-height: 1.3em;
+                    letter-spacing: 1px;
+                    color: $white;
+                    margin-bottom: 27px;
+                }
+            }
+        }
+        .form_services {
+            margin-bottom: 159px;
+        }
+        .carousel {
+            margin-bottom: 162px;
+            .title {
+                font-weight: 500;
+                font-size: 46px;
+                line-height: 1.3em;
+                text-align: center;
+                color: $darkGrey;
+            }
+            img {
+                width: 100%;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+            .navigation {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 23px;
+                margin-bottom: 50px;
+
+                :global {
+                    .swiper-button-disabled {
+                        opacity: 0.3;
+                    }
+                }
+
+                &_prev,
+                &_next {
+                    height: 52px;
+                    width: 52px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid $white;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: $animation;
+                    will-change: transition;
+
+                    &:hover {
+                        background: $orenge;
+                        border: 1px solid $orenge;
+                        border-radius: 4px;
+
+                        path {
+                            fill: $white;
+                        }
+                    }
+                }
+            }
+            &_wrapper {
+            }
+        }
+    }
+}

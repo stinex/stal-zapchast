@@ -7,11 +7,23 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5em;
-    color: $greyText;
     margin-bottom: 40px;
 
     .active {
         color: $grey;
+    }
+
+    &.dark {
+        color: $greyText;
+        .active {
+            color: $grey;
+        }
+    }
+    &.light {
+        color: #b3b3b3;
+        .active {
+            color: $white;
+        }
     }
 }
 @media (max-width: $mediaTablet) {

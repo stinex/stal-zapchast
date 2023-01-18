@@ -8,7 +8,7 @@ const MenuItem = ({ item }) => {
     if (item.link === 'contacts') {
         return (
             <li>
-                <Link href={item.link} >
+                <Link href={`/${item.link}`} >
                     {item.name}
                 </Link>
             </li>

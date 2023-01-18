@@ -24,9 +24,20 @@
 
         .phone {
             display: flex;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.5em;
+            color: $darkGrey;
             align-items: center;
             gap: 12px;
             margin-left: auto;
+        }
+    }
+
+    &.white {
+        .phone,
+        .logo {
+            color: $white;
         }
     }
 }

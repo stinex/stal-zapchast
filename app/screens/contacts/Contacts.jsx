@@ -12,7 +12,7 @@ const Contacts = () => {
                 <div className="container">
                     <div className={styles.information}>
                         <div className={styles.information_wrapper}>
-                            <Breadcrumbs page={'Контакты'} />
+                            <Breadcrumbs page={'Контакты'} theme={'dark'} />
                             <h2 className={styles.title}>
                                 Контакты
                             </h2>

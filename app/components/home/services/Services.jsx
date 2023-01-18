@@ -1,5 +1,5 @@
 import styles from './Services.module.scss'
-import { services } from './services-data'
+import { services } from '../../../assets/data/services-data'
 import ServicesItem from './services-item/ServicesItem'
 
 const Services = () => {

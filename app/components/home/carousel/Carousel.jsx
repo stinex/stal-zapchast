@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper';
 
 import 'swiper/css';
 import styles from './Carousel.module.scss'
@@ -73,10 +73,10 @@ const Carousel = () => {
                     <div className='custom_pagination'></div>
                     <div className={styles.navigation}>
                         <div className={styles.navigation_prev} ref={prevRef}>
-                            <ArrowLeft />
+                            <ArrowLeft color='#ffffff' />
                         </div>
                         <div className={styles.navigation_next} ref={nextRef}>
-                            <ArrowRight />
+                            <ArrowRight color='#ffffff' />
                         </div>
                     </div>
                 </div>

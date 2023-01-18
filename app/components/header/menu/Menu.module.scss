@@ -16,4 +16,14 @@
             }
         }
     }
+
+    &.white {
+        ul {
+            li {
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
 }

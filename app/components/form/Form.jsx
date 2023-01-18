@@ -76,7 +76,7 @@ const Form = ({ title }) => {
     }, [name, phone, email, file, checked, submit])
 
     return (
-        <form className={styles.form}>
+        <>
             <div className={styles.title}>
                 {title}
             </div>
@@ -123,8 +123,7 @@ const Form = ({ title }) => {
             </p>
 
             <input type="button" onClick={() => setSubmit(true)} className={styles.submit} value="Отправить" />
-
-        </form>
+        </>
     )
 }
 export default Form
