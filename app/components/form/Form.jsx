@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Check from '../../assets/images/svg/Check'
 import styles from './Form.module.scss'
 
-const Form = ({ title }) => {
+const Form = ({ title, type = null }) => {
     const [name, setName] = useState(null)
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState(null)
@@ -74,6 +74,34 @@ const Form = ({ title }) => {
             setErrorPhone(null)
         }
     }, [name, phone, email, file, checked, submit])
+
+    if (type === 'requestСall') {
+        return (
+            <>
+                <div className={styles.title}>
+                    {title}
+                </div>
+
+                <label htmlFor="name" className={styles.label}>
+                    Имя *
+                    <input onChange={e => setName(e.target.value)} type="text" id="name" name='name' className={styles.input} placeholder='Ваше имя' />
+                    {
+                        errorName && <p className={styles.error}>{errorName}</p>
+                    }
+                </label>
+
+                <label htmlFor="phone" className={styles.label}>
+                    Телефон *
+                    <input onChange={e => setPhone(e.target.value)} type="text" value={phone} id="phone" name='phone' className={styles.input} placeholder='Ваш номер телефона' />
+                    {
+                        errorPhone && <p className={styles.error}>{errorPhone}</p>
+                    }
+                </label>
+
+                <input type="button" onClick={() => setSubmit(true)} className={styles.submit} value="Заказать звонок" />
+            </>
+        )
+    }
 
     return (
         <>

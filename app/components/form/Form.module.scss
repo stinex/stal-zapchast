@@ -213,3 +213,68 @@
         margin: 30px auto 0;
     }
 }
+@media (max-width: $mediaTablet) {
+    .form_services {
+        max-width: 810px;
+        background: $white;
+        border: 1px solid #e5e8ed;
+        padding: 50px 46px 55px;
+
+        .title {
+            margin-bottom: 40px;
+            white-space: unset;
+        }
+        .checkbox {
+            grid-column: 1/-1;
+        }
+        .submit {
+            grid-column: 1/-1;
+            max-width: 315px;
+            margin: 30px auto 0;
+        }
+    }
+}
+@media (max-width: $mediaMobile) {
+    .form_services {
+        padding: 30px 30px 32px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: none;
+        background: #f9f9f9;
+
+        .title {
+            font-size: 22px;
+            margin-bottom: 7px;
+        }
+        .checkbox {
+            grid-column: 1/-1;
+        }
+        .submit {
+            grid-column: 1/-1;
+            max-width: 154px;
+            height: 44px;
+            margin: 15px auto 0;
+        }
+    }
+}
+
+/* ControlledModal */
+
+.modal {
+    .title {
+        font-size: 36px;
+        grid-column: 1/-1;
+        margin-bottom: 20px;
+        white-space: pre-wrap;
+    }
+    .checkbox {
+        grid-column: 1/-1;
+    }
+    .submit {
+        grid-column: 1/-1;
+        max-width: 315px;
+        margin: 30px auto 0;
+    }
+}

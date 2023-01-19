@@ -51,16 +51,16 @@ const Services = ({ service }) => {
                 <div className="container">
                     <div className={styles.form_services}>
                         <div className={styles_f.form_services}>
-                            <Form title={`Заполните форму\n для получения расчета стоимости`} />
+                            <Form title={`Заполните форму \nдля получения расчета стоимости`} />
                         </div>
                     </div>
 
                     <div className={styles.carousel}>
-                        <div className={styles.title}>
-                            Примеры наших работ
-                        </div>
                         <div className={styles.control}>
                             <div className={styles.control_wrapper}>
+                                <div className={styles.title}>
+                                    Примеры наших работ
+                                </div>
                                 <div className={styles.navigation}>
                                     <div className={styles.navigation_prev} ref={prevRef}>
                                         <ArrowLeft color='#424551' />
@@ -70,24 +70,34 @@ const Services = ({ service }) => {
                                     </div>
                                 </div>
                             </div>
+                            <Swiper
+                                className={styles.carousel_wrapper}
+                                slidesPerView={3}
+                                spaceBetween={30}
+                                onInit={swiperInit}
+                                modules={[Navigation]}
+
+                                breakpoints={{
+                                    320: {
+                                        slidesPerView: 'auto',
+                                        spaceBetween: 20
+                                    },
+                                    991: {
+                                        slidesPerView: 3,
+                                    }
+                                }}
+                            >
+                                {
+                                    service.images.map((item, i) => {
+                                        return (
+                                            <SwiperSlide key={i}>
+                                                <Image src={item} alt={service.fullName} style={{ height: "auto" }} />
+                                            </SwiperSlide>
+                                        )
+                                    })
+                                }
+                            </Swiper>
                         </div>
-                        <Swiper
-                            className={styles.carousel_wrapper}
-                            slidesPerView={3}
-                            spaceBetween={30}
-                            onInit={swiperInit}
-                            modules={[Navigation]}
-                        >
-                            {
-                                service.images.map((item, i) => {
-                                    return (
-                                        <SwiperSlide key={i}>
-                                            <Image src={item} alt={service.fullName} style={{ width: "auto" }} />
-                                        </SwiperSlide>
-                                    )
-                                })
-                            }
-                        </Swiper>
                     </div>
                 </div>
             </div>

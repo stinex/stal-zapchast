@@ -1,11 +1,18 @@
 import Link from 'next/link'
+import { useContext } from 'react'
 
 import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs'
 import styles from './Contacts.module.scss'
 
+import { ModalContext } from '../../components/modal/ModalContext'
 import { contacts } from '../../assets/data/contacts'
+import ControlledModal from '../../components/modal/ControlledModal'
+import Form from '../../components/form/Form'
 
 const Contacts = () => {
+
+    const { setShouldShowModal, shouldShowModal } = useContext(ModalContext)
+
     return (
         <div className={styles.contacts_wrapper}>
             <div className={styles.main_block}>
@@ -20,7 +27,7 @@ const Contacts = () => {
                                 Свяжитесь с нами по телефону и мы ответим на все интересующие вас вопросы
                             </p>
 
-                            <div className={styles.btn_order}>
+                            <div className={styles.btn_order} onClick={() => setShouldShowModal(!shouldShowModal)}>
                                 Заказать звонок
                             </div>
                         </div>
@@ -61,6 +68,12 @@ const Contacts = () => {
                     </div>
                 </div>
             </div>
+            <ControlledModal
+                shouldShow={shouldShowModal}
+                onRequestClose={() => setShouldShowModal(false)}
+            >
+                <Form title={`Оставьте заявку \nи мы свяжемся с вами`} type='requestСall' />
+            </ControlledModal>
         </div>
     )
 }

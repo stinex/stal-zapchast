@@ -81,7 +81,119 @@
                     }
                 }
             }
-            &_wrapper {
+        }
+    }
+}
+
+@media (max-width: $mediaTablet) {
+    .services {
+        &_wrapper {
+            .banner {
+                margin-bottom: 100px;
+                height: 435px;
+
+                .information {
+                    .title {
+                        margin-top: 7px;
+                        font-size: 40px;
+                        margin-bottom: 0;
+                        max-width: 600px;
+                    }
+                }
+            }
+            .form_services {
+                margin-bottom: 120px;
+            }
+            .carousel {
+                margin-bottom: 120px;
+
+                .title {
+                    font-size: 36px;
+                    text-align: left;
+                }
+                :global {
+                    .swiper {
+                        margin: 0 -39px;
+                        padding: 0 39px;
+                    }
+                    .swiper-slide {
+                        max-width: 275px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .navigation {
+                    margin-top: -30px;
+                    gap: 15px;
+                    margin-bottom: 24px;
+
+                    &_prev,
+                    &_next {
+                        height: 48px;
+                        width: 48px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: $mediaMobile) {
+    .services {
+        &_wrapper {
+            .banner {
+                margin-bottom: 60px;
+                height: 360px;
+
+                .information {
+                    .title {
+                        margin-top: 7px;
+                        font-size: 30px;
+                    }
+                }
+            }
+            .form_services {
+                margin-bottom: 77px;
+            }
+            .carousel {
+                margin-bottom: 100px;
+
+                .control_wrapper {
+                    display: flex;
+                    align-items: baseline;
+                    margin-bottom: 24px;
+                    justify-content: space-between;
+                }
+                .title {
+                    font-size: 24px;
+                    text-align: left;
+                    max-width: 150px;
+                }
+                :global {
+                    .swiper {
+                        margin: 0 -15px;
+                        padding: 0 15px;
+                    }
+                    .swiper-slide {
+                        max-width: 218px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .navigation {
+                    margin-top: 0px;
+                    gap: 5px;
+                    margin-bottom: 0;
+
+                    &_prev,
+                    &_next {
+                        height: 40px;
+                        width: 40px;
+                    }
+                }
             }
         }
     }
