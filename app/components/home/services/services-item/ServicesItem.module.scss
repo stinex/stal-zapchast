@@ -55,7 +55,7 @@
 @media (max-width: $mediaMobile) {
     .item {
         .img {
-            height: 345px;
+            height: auto;
         }
         .name {
             left: 30px;
@@ -64,3 +64,4 @@
         }
     }
 }
+

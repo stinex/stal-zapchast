@@ -14,6 +14,8 @@
     align-items: center;
     justify-content: center;
     .modal_body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         max-width: 810px;
         width: 100%;
         background: $white;
@@ -24,14 +26,40 @@
         position: relative;
         padding: 55px 75px 72px;
         gap: 20px 30px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
 
         .close {
             position: absolute;
             top: 28px;
             right: 42px;
             cursor: pointer;
+        }
+    }
+}
+@media (max-width: $mediaTablet) {
+    .modal_backgroud {
+        padding: 40px;
+    }
+}
+
+@media (max-width: $mediaMobile) {
+    .modal_backgroud {
+        padding: 20px;
+        .modal_body {
+            grid-template-columns: 1fr;
+            padding: 30px 20px;
+
+            .close {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    }
+}
+@media (max-width: $mediaMobileMini) {
+    .modal_backgroud {
+        padding: 15px;
+        .modal_body {
+            padding: 15px 15px;
         }
     }
 }

@@ -1,0 +1,126 @@
+@import "../../../assets/styles/variables.module.scss";
+.menu_burger {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 33px;
+    background: $white;
+    transform: translateX(-100%);
+    transition: $animation;
+    will-change: contents;
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    :global {
+        .container {
+            height: 100%;
+        }
+    }
+    &__wrapper {
+        height: 100%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 1.2em;
+                color: $darkGrey;
+                height: 39px;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .close {
+                cursor: pointer;
+            }
+        }
+        .body {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: auto;
+            ul {
+                li {
+                    a {
+                        padding: 15px 0;
+                        font-weight: 500;
+                        font-size: 36px; // 28 mobile
+                        line-height: 1.3em;
+                        color: $darkGrey;
+                    }
+                }
+                margin-bottom: 55px;
+            }
+            .btn_order {
+                background: $orenge;
+                border-radius: 4px;
+                height: 44px;
+                max-width: 203px;
+                width: 100%;
+                display: grid;
+                place-items: center;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 44px;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                color: $white;
+                margin: 0 auto;
+
+                &:hover {
+                    color: $orengeHover;
+                }
+            }
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5em;
+            color: $darkGrey;
+        }
+    }
+}
+@media (max-width: $mediaMobile) {
+    .menu_burger {
+        padding-top: 18px;
+        &__wrapper {
+            .body {
+                ul {
+                    li {
+                        a {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: $mediaMobileMini) {
+    .menu_burger {
+        &__wrapper {
+            .footer {
+                font-size: 12px;
+            }
+        }
+    }
+}

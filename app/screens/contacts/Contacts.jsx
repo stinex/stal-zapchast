@@ -28,7 +28,7 @@ const Contacts = () => {
                             </p>
 
                             <div className={styles.btn_order} onClick={() => setShouldShowModal(!shouldShowModal)}>
-                                Заказать звонок
+                                Заказать <span> звонок</span>
                             </div>
                         </div>
                     </div>

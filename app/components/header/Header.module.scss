@@ -32,6 +32,10 @@
             gap: 12px;
             margin-left: auto;
         }
+
+        .burger_menu {
+            display: none;
+        }
     }
 
     &.white {
@@ -42,8 +46,87 @@
     }
 }
 
+@media (max-width: $mediaLaptop) {
+    .header {
+        &.white_index {
+            .phone,
+            .logo {
+                color: $white;
+            }
+
+            ul {
+                li {
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: $mediaTablet) {
+    .header {
+        &_wrapper {
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            padding-top: 33px;
+            .phone {
+                display: none;
+            }
+            .logo {
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            .burger_menu {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: space-between;
+                width: 90px;
+                height: 39px;
+                cursor: pointer;
+
+                span {
+                    background: $orenge;
+                    height: 6.75px;
+                    border-radius: 5px;
+                    display: block;
+
+                    &:nth-child(1) {
+                        width: 100%;
+                    }
+                    &:nth-child(2) {
+                        width: 74%;
+                    }
+                    &:nth-child(3) {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        &.white_index {
+            .phone,
+            .logo {
+                color: $white;
+            }
+        }
+    }
+}
 @media (max-width: $mediaMobile) {
     .header {
-        display: none;
+        &_wrapper {
+            padding-top: 18px;
+            .burger_menu {
+                width: 71px;
+                height: 34px;
+                span {
+                    height: 6px;
+                }
+            }
+        }
     }
 }

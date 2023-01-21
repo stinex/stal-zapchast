@@ -5,7 +5,7 @@ import { Link as ScrollLink } from 'react-scroll'
 const MenuItem = ({ item }) => {
     const router = useRouter()
 
-    if (item.link === 'contacts') {
+    if (item.link === 'contacts' || item.link === '/') {
         return (
             <li>
                 <Link href={`/${item.link}`} >

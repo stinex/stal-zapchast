@@ -51,6 +51,10 @@
                 border-radius: 4px;
                 cursor: pointer;
 
+                span {
+                    display: contents;
+                }
+
                 &:hover {
                     background: $orengeHover;
                 }
@@ -108,6 +112,11 @@
                     max-width: 400px;
                     margin-bottom: 77px;
                 }
+                .btn_order {
+                    span {
+                        display: none;
+                    }
+                }
             }
         }
         .body {
@@ -125,17 +134,24 @@
 @media (max-width: $mediaMobile) {
     .contacts_wrapper {
         .main_block {
-            background: url(../../assets/images/contacts/bg-768.png) center no-repeat;
+            background: url(../../assets/images/contacts/bg-375.png) center no-repeat;
             background-size: cover;
             height: 540px;
             margin-bottom: 40px;
 
             .information {
+                align-items: flex-start;
+                padding-top: 109px;
                 .title {
                     font-size: 35px;
                 }
                 .description {
+                    max-width: 340px;
                     margin-bottom: 40px;
+                    color: $darkGrey;
+                }
+                .btn_order {
+                    max-width: 168px;
                 }
             }
         }

@@ -46,6 +46,7 @@ const Form = ({ title, type = null }) => {
 
 
     useEffect(() => {
+        console.log(file)
         if (phone) {
             setPhone(phoneFormat(phone))
         }
@@ -135,7 +136,7 @@ const Form = ({ title, type = null }) => {
                 Выбрать файл
                 <span className={styles.file}>
                     Загрузить файл
-                    <input onChange={e => setFile(e)} type="file" id="file" name='file' />
+                    <input onChange={e => setFile(e.target.files)} type="file" id="file" name='file' />
                 </span>
             </label>
 

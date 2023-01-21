@@ -111,6 +111,60 @@
     cursor: pointer;
 }
 
+/* ControlledModal */
+
+.modal {
+    .title {
+        font-size: 36px;
+        grid-column: 1/-1;
+        margin-bottom: 20px;
+        white-space: pre-wrap;
+    }
+    .checkbox {
+        grid-column: 1/-1;
+    }
+    .submit {
+        grid-column: 1/-1;
+        max-width: 315px;
+        margin: 30px auto 0;
+    }
+}
+@media (max-width: $mediaMobile) {
+    .modal {
+        .title {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .submit {
+            grid-column: 1/-1;
+            max-width: 315px;
+            margin: 15px auto 0;
+        }
+    }
+}
+@media (max-width: $mediaMobileMini) {
+    .label {
+        .input {
+            height: 38px;
+            margin-top: 0px;
+        }
+        .file {
+            height: 38px;
+            margin-top: 0px;
+        }
+    }
+    .modal {
+        .title {
+            font-size: 16px;
+        }
+
+        .submit {
+            margin: 0 auto;
+        }
+    }
+}
+
 /* FormBlock */
 .form__wrapper {
     max-width: 495px;
@@ -149,7 +203,7 @@
 
 @media (max-width: $mediaMobile) {
     .title {
-        font-size: 24px;
+        font-size: 23px;
     }
     .checkbox {
         font-size: 12px;
@@ -257,24 +311,5 @@
             height: 44px;
             margin: 15px auto 0;
         }
-    }
-}
-
-/* ControlledModal */
-
-.modal {
-    .title {
-        font-size: 36px;
-        grid-column: 1/-1;
-        margin-bottom: 20px;
-        white-space: pre-wrap;
-    }
-    .checkbox {
-        grid-column: 1/-1;
-    }
-    .submit {
-        grid-column: 1/-1;
-        max-width: 315px;
-        margin: 30px auto 0;
     }
 }
