@@ -1,10 +1,12 @@
-import Layout from '../app/layout/layout'
 import '../app/assets/styles/globals.scss'
+
+import ModalProvider from '../app/components/modal/ModalContext'
+
 const App = ({ Component, pageProps }) => {
   return (
-    <Layout>
+    <ModalProvider>
       <Component {...pageProps} />
-    </Layout>
+    </ModalProvider>
   )
 }
 export default App

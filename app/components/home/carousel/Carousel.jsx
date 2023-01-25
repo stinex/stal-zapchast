@@ -39,8 +39,6 @@ const Carousel = () => {
             pagination={pogination}
             onInit={swiperInit}
             modules={[Autoplay, Navigation, Pagination]}
-            // onSlideChange={() => console.log('slide change')}
-            // onSwiper={(swiper) => console.log(swiper)}
             autoplay={{
                 delay: 3000,
                 disableOnInteraction: false,

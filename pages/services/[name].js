@@ -1,22 +1,54 @@
-import { services } from "../../app/assets/data/services-data"
-import Services from "../../app/screens/services/Services"
+import { gql, GraphQLClient } from "graphql-request"
 
+import Services from "../../app/screens/services/Services"
 
 const ServicesPage = ({ service }) => {
     return <Services service={service} />
 }
 
-export const getStaticPaths = async () => {
-    const paths = services.map(service => {
-        return {
-            params: { name: service.link }
+export const getServerSideProps = async (pageContext) => {
+    const url = process.env.ENDPOINT
+
+    const graphQLClient = new GraphQLClient(url, {
+        headers: {
+            'Authorization': process.env.GRAPH_CMS_TOKEN
         }
     })
-    return { paths, fallback: false }
-}
 
-export const getStaticProps = async ({ params }) => {
-    const service = services.find(service => service.link === params?.name)
+    const pageLink = pageContext.query.name
+
+    const query = gql`
+        query($pageLink: String!){
+          service(where:  {
+            link: $pageLink
+         }){
+              fullName
+              name
+              img{
+                url
+              }
+              bg1920{
+                url
+              }
+              bg768{
+                url
+              }
+              bg375{
+                url
+              }
+              images{
+                url
+              }
+        }
+    }`
+
+    const variables = {
+        pageLink,
+    }
+
+    const data = await graphQLClient.request(query, variables)
+    const service = data.service
+
     return {
         props: {
             service

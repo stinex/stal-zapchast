@@ -6,7 +6,7 @@ const ModalProvider = ({ children }) => {
     const [shouldShowModal, setShouldShowModal] = useState(false)
     const [shouldShowModalTwo, setShouldShowModalTwo] = useState(false)
     return (
-        <ModalContext.Provider value={{ setShouldShowModal, shouldShowModal, setShouldShowModalTwo, shouldShowModalTwo }} {...children}>
+        <ModalContext.Provider value={{ setShouldShowModal, shouldShowModal, setShouldShowModalTwo, shouldShowModalTwo }} /* {...children} */>
             {children}
         </ModalContext.Provider>
     )

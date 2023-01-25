@@ -99,6 +99,21 @@
         }
     }
 }
+@media (max-width: $mediaLaptop) {
+    .menu_burger {
+        &.open {
+            .body {
+                ul {
+                    li {
+                        a {
+                            color: $darkGrey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 @media (max-width: $mediaMobile) {
     .menu_burger {
         padding-top: 18px;

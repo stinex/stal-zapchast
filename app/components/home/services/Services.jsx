@@ -1,8 +1,7 @@
 import styles from './Services.module.scss'
-import { services } from '../../../assets/data/services-data'
 import ServicesItem from './services-item/ServicesItem'
 
-const Services = () => {
+const Services = ({ services }) => {
     return (
         <div className={styles.services} >
             <div className="container" id='services'>

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { sendContactForm } from '../../../lib/api'
 import Check from '../../assets/images/svg/Check'
+import Done from '../../assets/images/svg/Done'
 import styles from './Form.module.scss'
 
 const Form = ({ title, type = null }) => {
@@ -10,6 +12,7 @@ const Form = ({ title, type = null }) => {
     const [checked, setChecked] = useState(true)
     const [submit, setSubmit] = useState(false)
 
+    const [sendFrom, setSendFrom] = useState(false)
 
     const [errorName, setErrorName] = useState(null)
     const [errorPhone, setErrorPhone] = useState(null)
@@ -45,12 +48,28 @@ const Form = ({ title, type = null }) => {
     };
 
 
+
+    const handlerSubmit = async () => {
+        if (errorName === null && name != null && errorPhone === null && phone.length >= 18 && errorChecked === null && checked === true) {
+
+            const form = new FormData()
+            form.append('name', name)
+            form.append('phone', phone)
+            form.append('email', email)
+            form.append('file', file)
+            form.append('type', type)
+
+            const res = await sendContactForm(form)
+
+            if (res.body)
+                setSendFrom(true)
+        }
+    }
+
     useEffect(() => {
-        console.log(file)
         if (phone) {
             setPhone(phoneFormat(phone))
         }
-
         if (!submit)
             return
 
@@ -76,6 +95,21 @@ const Form = ({ title, type = null }) => {
         }
     }, [name, phone, email, file, checked, submit])
 
+
+    if (sendFrom) {
+        return (
+            <div className={styles.done}>
+                <Done />
+                <h5 className={styles.done_title}>
+                    Спасибо за заявку
+                </h5>
+                <p className={styles.done_descriptopn}>
+                    Мы уже обрабатываем вашу заявку и в ближайшее время свяжемся с вами для уточнения деталей
+                </p>
+            </div>
+        )
+    }
+
     if (type === 'requestСall') {
         return (
             <>
@@ -98,8 +132,17 @@ const Form = ({ title, type = null }) => {
                         errorPhone && <p className={styles.error}>{errorPhone}</p>
                     }
                 </label>
-
-                <input type="button" onClick={() => setSubmit(true)} className={styles.submit} value="Заказать звонок" />
+                <p className={styles.checkbox}>
+                    <input checked={checked} onChange={e => setChecked(!checked)} type="checkbox" name="checkbox" id="checkbox" />
+                    <label htmlFor="checkbox">
+                        <Check />
+                    </label>
+                    Я принимаю условия конфиденциальности
+                    {
+                        errorChecked && <p className={styles.error}>{errorChecked}</p>
+                    }
+                </p>
+                <input type="button" onClick={() => { setSubmit(true); handlerSubmit(); }} className={styles.submit} value="Заказать звонок" />
             </>
         )
     }
@@ -135,8 +178,10 @@ const Form = ({ title, type = null }) => {
             <label htmlFor="file" className={styles.label}>
                 Выбрать файл
                 <span className={styles.file}>
-                    Загрузить файл
-                    <input onChange={e => setFile(e.target.files)} type="file" id="file" name='file' />
+                    {
+                        file ? 'Файл загружен' : ' Загрузить файл'
+                    }
+                    <input onChange={e => setFile(e.target.files[0])} type="file" id="file" name='file' />
                 </span>
             </label>
 
@@ -151,7 +196,7 @@ const Form = ({ title, type = null }) => {
                 }
             </p>
 
-            <input type="button" onClick={() => setSubmit(true)} className={styles.submit} value="Отправить" />
+            <input type="button" onClick={() => { setSubmit(true); handlerSubmit(); }} className={styles.submit} value="Отправить" />
         </>
     )
 }

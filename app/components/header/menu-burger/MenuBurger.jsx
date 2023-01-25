@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useContext, useEffect } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
+
 import { ModalContext } from '../../modal/ModalContext'
 import { menu } from '../../../assets/data/menu-data'
 
@@ -41,7 +42,7 @@ const MenuBurger = ({ menuShow, onRequestCloseMenu }) => {
                                 if (item.link === 'contacts' || item.link === '/') {
                                     return (
                                         <li key={item.link}>
-                                            <Link href={item.link === '/' ? `${item.link}`: `/${item.link}`} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link} onClick={onRequestCloseMenu}>
+                                            <Link href={item.link === '/' ? `${item.link}` : `/${item.link}`} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link} onClick={onRequestCloseMenu}>
                                                 {item.name}
                                             </Link>
                                         </li>
@@ -79,7 +80,7 @@ const MenuBurger = ({ menuShow, onRequestCloseMenu }) => {
                 shouldShow={shouldShowModalTwo}
                 onRequestClose={() => setShouldShowModalTwo(false)}
             >
-                <Form title={`Заполните форму \nдля получения расчета стоимости`} />
+                <Form title={`Заполните форму \nдля получения расчета стоимости`} type='requestСall' />
             </ControlledModal>
         </div>
     )

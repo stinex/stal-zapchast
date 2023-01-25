@@ -11,13 +11,17 @@ import FormBlock from '../../components/home/form-block/FormBlock'
 import styles from './Home.module.scss'
 import ControlledModal from '../../components/modal/ControlledModal'
 import Form from '../../components/form/Form'
+import Layout from '../../layout/layout'
 
-const Home = () => {
+const Home = ({ services }) => {
 
   const { setShouldShowModal, shouldShowModal } = useContext(ModalContext)
 
   return (
-    <>
+    <Layout
+      title="Главная"
+      description='Главная'
+    >
       <div className={styles.home_wrapper} >
         <div className={styles.main_section} >
           <div className={`${styles.content} container`}>
@@ -38,19 +42,18 @@ const Home = () => {
           </div>
           <Carousel />
         </div>
+        <ControlledModal
+          shouldShow={shouldShowModal}
+          onRequestClose={() => setShouldShowModal(false)}
+        >
+          <Form title={`Заполните форму \nдля получения расчета стоимости`} />
+        </ControlledModal>
         <Advantage />
-        <Services />
+        <Services services={services} />
         <AboutCompany />
         <FormBlock />
       </div>
-
-      <ControlledModal
-        shouldShow={shouldShowModal}
-        onRequestClose={() => setShouldShowModal(false)}
-      >
-        <Form title={`Заполните форму \nдля получения расчета стоимости`} />
-      </ControlledModal>
-    </>
+    </Layout>
   )
 }
 export default Home

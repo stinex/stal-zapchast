@@ -4,6 +4,7 @@
     position: relative;
     border-radius: 4px;
     overflow: hidden;
+    max-width: fit-content;
 
     .img {
         width: 100%;
@@ -64,4 +65,3 @@
         }
     }
 }
-
