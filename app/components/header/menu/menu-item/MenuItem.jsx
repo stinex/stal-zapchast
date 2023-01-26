@@ -17,7 +17,7 @@ const MenuItem = ({ item }) => {
     else if (router.route === '/') {
         return (
             <li>
-                <ScrollLink spy={true} to={item.link} smooth={true}>
+                <ScrollLink href="#" spy={true} to={item.link} smooth={true}>
                     {item.name}
                 </ScrollLink>
             </li>

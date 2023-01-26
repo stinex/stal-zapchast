@@ -50,7 +50,7 @@ const MenuBurger = ({ menuShow, onRequestCloseMenu }) => {
                                 } else if (router.route === '/') {
                                     return (
                                         <li key={item.link}>
-                                            <ScrollLink to={item.link} smooth={true} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link} onClick={onRequestCloseMenu}>
+                                            <ScrollLink  href="#" to={item.link} smooth={true} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link} onClick={onRequestCloseMenu}>
                                                 {item.name}
                                             </ScrollLink>
                                         </li>

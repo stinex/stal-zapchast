@@ -8,6 +8,7 @@
     display: flex;
     justify-content: flex-end;
     opacity: 0;
+    padding: 0 15px;
     z-index: -10;
     pointer-events: none;
     transition: $animation;
@@ -37,5 +38,15 @@
             cursor: pointer;
             background: $orengeHover;
         }
+    }
+}
+@media (max-width: $mediaTablet) {
+    .scroll_top {
+        padding: 0 39px;
+    }
+}
+@media (max-width: $mediaMobile) {
+    .scroll_top {
+        padding: 0 15px;
     }
 }

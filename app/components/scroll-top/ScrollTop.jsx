@@ -17,7 +17,7 @@ const ScrollTop = () => {
     return (
         <div className={`${styles.scroll_top} container ${scroll >= 600 ? styles.visible : ''}`}>
             {/* Наверх */}
-            <Link to='__next' smooth={true}>
+            <Link href="#" to='__next' smooth={true}>
                 <ScrollUp />
             </Link>
         </div>

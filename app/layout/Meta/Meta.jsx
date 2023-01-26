@@ -5,7 +5,7 @@ import { siteName, titleMerge } from './meta.config'
 const Meta = ({
     title,
     description,
-    image = '/images/logo.png',
+    image = 'logo.png',
     children,
     type = 'website'
 }) => {
