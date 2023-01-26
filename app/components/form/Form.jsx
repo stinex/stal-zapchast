@@ -14,6 +14,7 @@ const Form = ({ title, type = null }) => {
 
     const [sendFrom, setSendFrom] = useState(false)
 
+    const [errorFile, setErrorFile] = useState(null)
     const [errorName, setErrorName] = useState(null)
     const [errorPhone, setErrorPhone] = useState(null)
     const [errorChecked, setErrorChecked] = useState(null)
@@ -50,6 +51,8 @@ const Form = ({ title, type = null }) => {
 
 
     const handlerSubmit = async () => {
+        if (file && file.size > 23000000)
+            return
         if (errorName === null && name != null && errorPhone === null && phone.length >= 18 && errorChecked === null && checked === true) {
 
             const form = new FormData()
@@ -70,6 +73,13 @@ const Form = ({ title, type = null }) => {
         if (phone) {
             setPhone(phoneFormat(phone))
         }
+
+        if (file && file.size > 23000000) {
+            setErrorFile('Размер файла превышает 25 МБ.')
+        } else {
+            setErrorFile(null)
+        }
+
         if (!submit)
             return
 
@@ -183,6 +193,9 @@ const Form = ({ title, type = null }) => {
                     }
                     <input onChange={e => setFile(e.target.files[0])} type="file" id="file" name='file' />
                 </span>
+                {
+                    errorFile && <p className={styles.error}>{errorFile}</p>
+                }
             </label>
 
             <p className={styles.checkbox}>
