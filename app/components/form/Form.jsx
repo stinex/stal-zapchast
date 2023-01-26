@@ -70,6 +70,7 @@ const Form = ({ title, type = null }) => {
     }
 
     useEffect(() => {
+
         if (phone) {
             setPhone(phoneFormat(phone))
         }
