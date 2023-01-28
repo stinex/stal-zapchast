@@ -18,7 +18,7 @@ const Header = () => {
                 <div className={styles.header_wrapper}>
                     <Link href="/" className={styles.logo}>
                         <Logo />
-                        СтальЗапчасть
+                        МеталлДеталь
                     </Link>
                     <Menu location='header' />
                     <Link href="tel:+7(996)233-41-51" className={styles.phone}>

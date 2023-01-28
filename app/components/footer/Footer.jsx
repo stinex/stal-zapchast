@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className={styles.footer_wrapper}>
                     <Link href="/" className={styles.logo}>
                         <Logo />
-                        СтальЗапчасть
+                        МеталлДеталь
                     </Link>
                     <div className={styles.menu}>
                         <ul>

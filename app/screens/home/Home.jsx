@@ -31,13 +31,8 @@ const Home = ({ services }) => {
             <p className={styles.description}>
               Осуществляем свою деятельность на рынке  металлообработки литых запасных частей и комплектующих к оборудованию. <span> Гарантируем конкурентоспособную цену и качество.</span>
             </p>
-            <div className={styles.btns}>
-              <div className={`${styles.btn} ${styles.lore_more}`}>
-                Подробнее
-              </div>
-              <div className={`${styles.btn} ${styles.order}`} onClick={() => setShouldShowModal(!shouldShowModal)}>
-                Заказать
-              </div>
+            <div className={`${styles.btn} ${styles.order}`} onClick={() => setShouldShowModal(!shouldShowModal)}>
+              Заказать
             </div>
           </div>
           <Carousel />

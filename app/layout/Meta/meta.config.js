@@ -1,2 +1,2 @@
-export const siteName = 'ТПК СТАЛЬЗАПЧАСТЬ'
+export const siteName = 'ТПК МеталлДеталь'
 export const titleMerge = (title) => `${title} | ${siteName}`

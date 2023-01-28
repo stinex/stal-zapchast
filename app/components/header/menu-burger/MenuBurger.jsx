@@ -30,7 +30,7 @@ const MenuBurger = ({ menuShow, onRequestCloseMenu }) => {
                     <div className={styles.header}>
                         <Link href="/" className={styles.logo}>
                             <Logo />
-                            СтальЗапчасть
+                            МеталлДеталь
                         </Link>
                         <div className={styles.close} onClick={onRequestCloseMenu}>
                             <CloseMenu />
