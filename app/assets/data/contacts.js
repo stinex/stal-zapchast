@@ -5,7 +5,7 @@ import PhoneContacts from "../images/svg/PhoneContacts"
 export const contacts = [
     {
         name: 'Адрес',
-        text: 'г. Челябинск, ул. Российская 59a\\14',
+        text: 'г. Челябинск, ул. Российская 59a/14',
         link: 'https://yandex.ru/maps/-/CCUvjCh8OD',
         icon: <Location />,
         type: 'address',
