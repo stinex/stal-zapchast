@@ -22,6 +22,19 @@
         line-height: 1.3em;
     }
 
+    &::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: block;
+        z-index: 1;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
     &::after {
         content: "";
         height: 0px;
@@ -33,7 +46,7 @@
         transition: $animation;
         will-change: contents;
     }
-    &:hover img{
+    &:hover img {
         transform: scale(1.1);
     }
     &:hover::after {

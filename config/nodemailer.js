@@ -5,12 +5,12 @@ export const transporter = nodemailer.createTransport({
     port: '465',
     sender: 'gmail',
     auth: {
-        user: 'stinex.sx@gmail.com',
-        pass: 'piuiljowerprjsqf'
+        user: 'metalldetal74@gmail.com',
+        pass: 'feikhauaakdjozwq'
     }
 })
 
 export const mailOptions = {
-    from: 'stinex.sx@gmail.com',
+    from: 'metalldetal74@gmail.com',
     to: 'stinex.sx@gmail.com',
 }

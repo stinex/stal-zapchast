@@ -70,6 +70,18 @@
             line-height: 1.5em;
             color: $white;
         }
+        .dev {
+            grid-column: 1/-1;
+            color: $greyText;
+            margin-top: 10px;
+            font-size: 12px;
+
+            a {
+                display: inline-block;
+                color: $white;
+                opacity: .7;
+            }
+        }
     }
 }
 @media (max-width: $mediaTablet) {
@@ -98,7 +110,7 @@
                 margin-bottom: 47px;
             }
             .reserved {
-               margin-top: 89px;
+                margin-top: 89px;
             }
         }
     }

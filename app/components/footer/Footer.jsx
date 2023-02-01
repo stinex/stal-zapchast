@@ -31,7 +31,7 @@ const Footer = () => {
                                 } else if (router.route === '/') {
                                     return (
                                         <li key={item.link}>
-                                            <ScrollLink href="#"  to={item.link} smooth={true} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link}>
+                                            <ScrollLink href="#" to={item.link} smooth={true} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link}>
                                                 {item.name}
                                             </ScrollLink>
                                         </li>
@@ -79,6 +79,7 @@ const Footer = () => {
                         </ul>
                     </nav>
                     <div className={styles.reserved}>© Все права защищены</div>
+                    <div className={styles.dev}>design by <a href="https://t.me/tatiaparina" target='_blonk'>@tatiaparina</a> & dev by <a href="https://t.me/vladislav_27" target='_blonk'>@vladislav_27</a></div>
                 </div>
             </div>
         </div>
