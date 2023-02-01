@@ -52,8 +52,7 @@ export const getServerSideProps = async (pageContext) => {
     return {
         props: {
             service
-        },
-        revalidate: 10
+        }
     }
 }
 export default ServicesPage
