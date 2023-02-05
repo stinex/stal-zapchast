@@ -84,8 +84,19 @@
                 font-weight: 700;
                 font-size: 16px;
                 letter-spacing: 0.5px;
-                text-transform: uppercase;
                 color: $darkGrey;
+
+                .phone {
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                    margin-bottom: 3px;
+
+                    img{
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
             }
         }
         .map {

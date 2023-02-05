@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from "next/image"
 import { useRouter } from 'next/router'
 import { useContext, useEffect } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
@@ -12,6 +13,7 @@ import Logo from '../../../assets/images/svg/Logo'
 import styles from './MenuBurger.module.scss'
 import ControlledModal from '../../modal/ControlledModal'
 import Form from '../../form/Form'
+import { contacts } from '../../../assets/data/contacts'
 
 
 const MenuBurger = ({ menuShow, onRequestCloseMenu }) => {
@@ -50,7 +52,7 @@ const MenuBurger = ({ menuShow, onRequestCloseMenu }) => {
                                 } else if (router.route === '/') {
                                     return (
                                         <li key={item.link}>
-                                            <ScrollLink  href="#" to={item.link} smooth={true} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link} onClick={onRequestCloseMenu}>
+                                            <ScrollLink href="#" to={item.link} smooth={true} className={item.link === '/' ? `${styles.link} ${styles.main}` : styles.link} onClick={onRequestCloseMenu}>
                                                 {item.name}
                                             </ScrollLink>
                                         </li>
@@ -69,6 +71,31 @@ const MenuBurger = ({ menuShow, onRequestCloseMenu }) => {
                         <div className={styles.btn_order} onClick={() => setShouldShowModalTwo(!shouldShowModalTwo)}>
                             Заказать звонок
                         </div>
+
+
+                        <nav className={styles.social}>
+                            <div className={styles.social_head}>
+                                Написать нам:
+                            </div>
+                            <div className={styles.socials}>
+                                {
+                                    contacts.map(item => {
+                                        if (item.type === 'phone') {
+                                            return (
+                                                item.text.map((phone, i) => {
+                                                    return (
+                                                        <Link key={i} type={item.type} href={phone.type === 'telegram' ? ` https://telegram.me/${phone.link}` : `https://wa.me/${phone.link}`}>
+                                                            <Image src={phone.icon} />
+                                                        </Link>
+                                                    )
+                                                })
+                                            )
+                                        }
+                                    })
+                                }
+                            </div>
+                        </nav>
+
                     </div>
                     <div className={styles.footer}>
                         © МеталлДеталь.Все права защищены

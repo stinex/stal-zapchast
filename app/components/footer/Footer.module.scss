@@ -5,8 +5,7 @@
     padding: 50px 0 90px;
     &_wrapper {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 788px;
+        grid-template-columns: repeat(3, 1fr);
 
         .logo {
             grid-column: 1/-1;
@@ -44,7 +43,6 @@
                 color: $white;
                 margin-bottom: 4px;
                 display: flex;
-                align-items: center;
                 gap: 4px;
 
                 a {
@@ -60,6 +58,22 @@
                         opacity: 1;
                     }
                 }
+            }
+        }
+        .social {
+            .social_head {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 150%;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: $white;
+                margin-bottom: 15px;
+            }
+
+            .socials{
+                display: flex;
+                gap: 16px;
             }
         }
         .reserved {
@@ -79,7 +93,7 @@
             a {
                 display: inline-block;
                 color: $white;
-                opacity: .7;
+                opacity: 0.7;
             }
         }
     }
@@ -88,11 +102,14 @@
     .footer {
         padding: 50px 0 43px;
         &_wrapper {
-            max-width: 500px;
             grid-template-columns: 242px 100%;
 
             .reserved {
                 font-size: 16px;
+            }
+
+            .contacts{
+                margin-bottom: 60px;
             }
         }
     }

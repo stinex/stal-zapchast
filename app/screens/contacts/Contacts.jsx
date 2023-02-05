@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useContext } from 'react'
+import Image from "next/image"
 
 import Breadcrumbs from '../../components/breadcrumbs/Breadcrumbs'
 import styles from './Contacts.module.scss'
@@ -49,18 +50,42 @@ const Contacts = () => {
                                 <ul>
                                     {
                                         contacts.map(item => {
-                                            return (
-                                                <li key={item.text} className={styles.item}>
-                                                    <span className={styles.icon}>
-                                                        {item.icon}
-                                                    </span>
-                                                    <Link type={item.type} href={item.type === 'phone' ?
-                                                        "tel:" + item.text : item.type === 'email' ? "mailto:" + item.text :
-                                                            item.type === 'address' ? item?.link : item.text}>
-                                                        {item.text}
-                                                    </Link>
-                                                </li>
-                                            )
+                                            if (item.type === 'phone') {
+                                                return (
+                                                    <li key={item.text} className={styles.item}>
+                                                        <span className={styles.icon}>
+                                                            {item.icon}
+                                                        </span>
+                                                        <span>
+                                                            {
+                                                                item.text.map((phone, i) => {
+                                                                    return (
+                                                                        <span className={styles.phone}>
+                                                                            <Link key={i} type={item.type} href={"tel:" + phone.number}>
+                                                                                {phone.number}
+                                                                            </Link>
+                                                                            <Image src={phone.icon} />
+                                                                        </span>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </span>
+                                                    </li>
+                                                )
+                                            } else {
+                                                return (
+                                                    <li key={item.text} className={styles.item}>
+                                                        <span className={styles.icon}>
+                                                            {item.icon}
+                                                        </span>
+                                                        <Link type={item.type} href={item.type === 'phone' ?
+                                                            "tel:" + item.text : item.type === 'email' ? "mailto:" + item.text :
+                                                                item.type === 'address' ? item?.link : item.text}>
+                                                            {item.text}
+                                                        </Link>
+                                                    </li>
+                                                )
+                                            }
                                         })
                                     }
                                 </ul>

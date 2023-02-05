@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from "next/image"
 import { useRouter } from 'next/router'
 import { Link as ScrollLink } from 'react-scroll'
 import Logo from '../../assets/images/svg/Logo'
@@ -62,21 +63,63 @@ const Footer = () => {
                             </li>
                             {
                                 contacts.map(item => {
-                                    return (
-                                        <li key={item.text} className={styles.text}>
-                                            <span>
-                                                {item.name}:
-                                            </span>
-                                            <Link type={item.type} href={item.type === 'phone' ?
-                                                "tel:" + item.text : item.type === 'email' ? "mailto:" + item.text :
+                                    if (item.type === 'phone') {
+                                        return (
+                                            <li key={item.text} className={styles.text}>
+                                                <span>
+                                                    {item.name}:
+                                                </span>
+                                                <span>
+                                                    {
+                                                        item.text.map((phone, i) => {
+                                                            return (
+                                                                <Link key={i} type={item.type} href={"tel:" + phone.number}>
+                                                                    {phone.number}
+                                                                </Link>
+                                                            )
+                                                        })
+                                                    }
+                                                </span>
+                                            </li>
+                                        )
+                                    } else {
+                                        return (
+                                            <li key={item.text} className={styles.text}>
+                                                <span>
+                                                    {item.name}:
+                                                </span>
+                                                <Link type={item.type} href={item.type === 'email' ? "mailto:" + item.text :
                                                     item.type === 'address' ? item?.link : item.text}>
-                                                {item.text}
-                                            </Link>
-                                        </li>
-                                    )
+                                                    {item.text}
+                                                </Link>
+                                            </li>
+                                        )
+                                    }
                                 })
                             }
                         </ul>
+                    </nav>
+                    <nav className={styles.social}>
+                        <div className={styles.social_head}>
+                            Написать нам:
+                        </div>
+                        <div className={styles.socials}>
+                            {
+                                contacts.map(item => {
+                                    if (item.type === 'phone') {
+                                        return (
+                                            item.text.map((phone, i) => {
+                                                return (
+                                                    <Link key={i} type={item.type} href={phone.type === 'telegram' ? ` https://telegram.me/${phone.link}` : `https://wa.me/${phone.link}`}>
+                                                        <Image src={phone.icon} />
+                                                    </Link>
+                                                )
+                                            })
+                                        )
+                                    }
+                                })
+                            }
+                        </div>
                     </nav>
                     <div className={styles.reserved}>© Все права защищены</div>
                     <div className={styles.dev}>design by <a href="https://t.me/tatiaparina" target='_blonk'>@tatiaparina</a> & dev by <a href="https://t.me/vladislav_27" target='_blonk'>@vladislav_27</a></div>

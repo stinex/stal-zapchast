@@ -2,6 +2,9 @@ import Location from "../images/svg/Location"
 import Mail from "../images/svg/Mail"
 import PhoneContacts from "../images/svg/PhoneContacts"
 
+import IconTelegram from '../images/telegram.png'
+import IconWhatsapp from '../images/whatsapp.png'
+
 export const contacts = [
     {
         name: 'Адрес',
@@ -12,13 +15,25 @@ export const contacts = [
     },
     {
         name: 'Телефон',
-        text: '+7 (996) 233-41-51',
-        icon: <PhoneContacts/>,
+        text: [
+            {
+                number: '+7 (996) 233-41-51',
+                link: '+79962334151',
+                icon: IconTelegram,
+                type: 'telegram'
+            },
+            {
+                number: '+7 (982) 292-09-50',
+                link: '+79822920950',
+                icon: IconWhatsapp,
+                type: 'whatsapp'
+            }],
+        icon: <PhoneContacts />,
         type: 'phone',
     },
     {
         name: 'Email',
-        text: 'zapchast_174@bk.ru',
+        text: 'detal-174@mail.ru',
         icon: <Mail />,
         type: 'email',
     },
