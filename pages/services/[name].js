@@ -18,29 +18,31 @@ export const getServerSideProps = async (pageContext) => {
     const pageLink = pageContext.query.name
 
     const query = gql`
-        query($pageLink: String!){
-          service(where:  {
-            link: $pageLink
-         }){
-              fullName
-              name
-              img{
-                url
-              }
-              bg1920{
-                url
-              }
-              bg768{
-                url
-              }
-              bg375{
-                url
-              }
-              images{
-                url
-              }
+      query ($pageLink: String!) {
+        service(where: { link: $pageLink }) {
+          fullName
+          name
+          descriptionMain {
+            html
+          }
+          img {
+            url
+          }
+          bg1920 {
+            url
+          }
+          bg768 {
+            url
+          }
+          bg375 {
+            url
+          }
+          images {
+            url
+          }
         }
-    }`
+      }
+    `;
 
     const variables = {
         pageLink,

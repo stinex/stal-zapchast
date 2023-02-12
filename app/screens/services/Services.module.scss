@@ -1,200 +1,220 @@
 @import "../../assets/styles/variables.module.scss";
 
 .services {
-    &_wrapper {
-        .banner {
-            margin-bottom: 71px;
-            height: 600px;
+  &_wrapper {
+    .banner {
+      margin-bottom: 71px;
+      height: 600px;
 
-            :global {
-                .container {
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                }
-            }
-            .information {
-                .title {
-                    margin-top: 40px;
-                    max-width: 750px;
-                    font-weight: 700;
-                    font-size: 65px;
-                    line-height: 1.3em;
-                    letter-spacing: 1px;
-                    color: $white;
-                    margin-bottom: 27px;
-                }
-            }
+      :global {
+        .container {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
-        .form_services {
-            margin-bottom: 159px;
+      }
+      .information {
+        .title {
+          margin-top: 40px;
+          max-width: 750px;
+          font-weight: 700;
+          font-size: 65px;
+          line-height: 1.3em;
+          letter-spacing: 1px;
+          color: $white;
+          margin-bottom: 27px;
         }
-        .carousel {
-            margin-bottom: 162px;
-            .title {
-                font-weight: 500;
-                font-size: 46px;
-                line-height: 1.3em;
-                text-align: center;
-                color: $darkGrey;
-            }
-            img {
-                width: 100%;
-                object-fit: cover;
-                border-radius: 5px;
-            }
-            .navigation {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                gap: 23px;
-                margin-bottom: 50px;
-
-                :global {
-                    .swiper-button-disabled {
-                        opacity: 0.3;
-                    }
-                }
-
-                &_prev,
-                &_next {
-                    height: 52px;
-                    width: 52px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 1px solid $white;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    transition: $animation;
-                    will-change: transition;
-
-                    &:hover {
-                        background: $orenge;
-                        border: 1px solid $orenge;
-                        border-radius: 4px;
-
-                        path {
-                            fill: $white;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+    .form_services {
+      margin-bottom: 159px;
+    }
+    .carousel {
+      margin-bottom: 162px;
+      .title {
+        font-weight: 500;
+        font-size: 46px;
+        line-height: 1.3em;
+        text-align: center;
+        color: $darkGrey;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 23px;
+        margin-bottom: 50px;
+
+        :global {
+          .swiper-button-disabled {
+            opacity: 0.3;
+          }
+        }
+
+        &_prev,
+        &_next {
+          height: 52px;
+          width: 52px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $white;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: $animation;
+          will-change: transition;
+
+          &:hover {
+            background: $orenge;
+            border: 1px solid $orenge;
+            border-radius: 4px;
+
+            path {
+              fill: $white;
+            }
+          }
+        }
+      }
+    }
+    .html {
+        margin-bottom: 60px;
+        color: $darkGrey;
+      :global {
+        h2{
+        margin-bottom: 15px;
+        }
+        ul {
+          padding-left: 15px;
+        }
+        li {
+          list-style: disc;
+          padding: 5px 0;
+        }
+
+        p{
+            padding: 5px 0 ;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: $mediaTablet) {
-    .services {
-        &_wrapper {
-            .banner {
-                margin-bottom: 100px;
-                height: 435px;
+  .services {
+    &_wrapper {
+      .banner {
+        margin-bottom: 100px;
+        height: 435px;
 
-                .information {
-                    .title {
-                        margin-top: 7px;
-                        font-size: 40px;
-                        margin-bottom: 0;
-                        max-width: 600px;
-                    }
-                }
-            }
-            .form_services {
-                margin-bottom: 120px;
-            }
-            .carousel {
-                margin-bottom: 120px;
-
-                .title {
-                    font-size: 36px;
-                    text-align: left;
-                }
-                :global {
-                    .swiper {
-                        margin: 0 -39px;
-                        padding: 0 39px;
-                    }
-                    .swiper-slide {
-                        max-width: 275px;
-                        img {
-                            width: 100%;
-                        }
-                    }
-                }
-
-                .navigation {
-                    margin-top: -30px;
-                    gap: 15px;
-                    margin-bottom: 24px;
-
-                    &_prev,
-                    &_next {
-                        height: 48px;
-                        width: 48px;
-                    }
-                }
-            }
+        .information {
+          .title {
+            margin-top: 7px;
+            font-size: 40px;
+            margin-bottom: 0;
+            max-width: 600px;
+          }
         }
+      }
+      .form_services {
+        margin-bottom: 120px;
+      }
+      .carousel {
+        margin-bottom: 120px;
+
+        .title {
+          font-size: 36px;
+          text-align: left;
+        }
+        :global {
+          .swiper {
+            margin: 0 -39px;
+            padding: 0 39px;
+          }
+          .swiper-slide {
+            max-width: 275px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        .navigation {
+          margin-top: -30px;
+          gap: 15px;
+          margin-bottom: 24px;
+
+          &_prev,
+          &_next {
+            height: 48px;
+            width: 48px;
+          }
+        }
+      }
     }
+  }
 }
 @media (max-width: $mediaMobile) {
-    .services {
-        &_wrapper {
-            .banner {
-                margin-bottom: 60px;
-                height: 360px;
+  .services {
+    &_wrapper {
+      .banner {
+        margin-bottom: 60px;
+        height: 360px;
 
-                .information {
-                    .title {
-                        margin-top: 7px;
-                        font-size: 30px;
-                    }
-                }
-            }
-            .form_services {
-                margin-bottom: 77px;
-            }
-            .carousel {
-                margin-bottom: 100px;
-
-                .control_wrapper {
-                    display: flex;
-                    align-items: baseline;
-                    margin-bottom: 24px;
-                    justify-content: space-between;
-                }
-                .title {
-                    font-size: 24px;
-                    text-align: left;
-                    max-width: 150px;
-                }
-                :global {
-                    .swiper {
-                        margin: 0 -15px;
-                        padding: 0 15px;
-                    }
-                    .swiper-slide {
-                        max-width: 218px;
-                        img {
-                            width: 100%;
-                        }
-                    }
-                }
-
-                .navigation {
-                    margin-top: 0px;
-                    gap: 5px;
-                    margin-bottom: 0;
-
-                    &_prev,
-                    &_next {
-                        height: 40px;
-                        width: 40px;
-                    }
-                }
-            }
+        .information {
+          .title {
+            margin-top: 7px;
+            font-size: 30px;
+          }
         }
+      }
+      .form_services {
+        margin-bottom: 77px;
+      }
+      .carousel {
+        margin-bottom: 100px;
+
+        .control_wrapper {
+          display: flex;
+          align-items: baseline;
+          margin-bottom: 24px;
+          justify-content: space-between;
+        }
+        .title {
+          font-size: 24px;
+          text-align: left;
+          max-width: 150px;
+        }
+        :global {
+          .swiper {
+            margin: 0 -15px;
+            padding: 0 15px;
+          }
+          .swiper-slide {
+            max-width: 218px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        .navigation {
+          margin-top: 0px;
+          gap: 5px;
+          margin-bottom: 0;
+
+          &_prev,
+          &_next {
+            height: 40px;
+            width: 40px;
+          }
+        }
+      }
     }
+  }
 }

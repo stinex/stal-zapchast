@@ -69,6 +69,11 @@ const Services = ({ service }) => {
                             </div>
                         </div>
                     </div>
+                    <div className="container">                        
+                        <div className={styles.html}>
+                            <div dangerouslySetInnerHTML={{__html: service.descriptionMain.html}} />
+                        </div>
+                    </div>
                     <div className="container">
                         <div className={styles.form_services}>
                             <div className={styles_f.form_services}>
